@@ -1,0 +1,21 @@
+<template>
+    <lightning-modal-header label="Upload File"></lightning-modal-header>
+    <div class="slds-p-around_medium lgc-bg" >
+<lightning-file-upload
+        label="Attach File"
+        name="fileUploader"
+        accept={acceptedFormats}
+        record-id={recordId}
+        onuploadfinished={handleUpload}
+    >
+    </lightning-file-upload>
+
+    <lightning-input type="file" 
+        accept={acceptedFormats}
+        label="Attach File" onchange={openfileUpload}>
+    </lightning-input>
+    <template if:true={fileData}>
+        <p>{fileData.filename}</p>
+    </template>
+    </div>
+</template>
